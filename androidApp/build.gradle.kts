@@ -44,5 +44,12 @@ dependencies {
     implementation(libs.compose.ui.tooling.preview)
     implementation(libs.compose.material3)
     implementation(libs.androidx.activity.compose)
+
+    //lib para renderizar imagem da internet po http
+    implementation(libs.coil.compose)
+
+    //Navigation
+    implementation(libs.androidx.navigation.compose)
+
     debugImplementation(libs.compose.ui.tooling)
 }
