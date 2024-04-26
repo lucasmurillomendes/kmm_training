@@ -40,11 +40,12 @@ kotlin {
         }
 
         androidMain.dependencies {
+            implementation(libs.ktor.client.android)
             implementation(libs.androidx.lifecycle.viewmodel.ktx)
         }
 
         iosMain.dependencies {
-
+            implementation(libs.ktor.client.darwin)
         }
 
         commonTest.dependencies {

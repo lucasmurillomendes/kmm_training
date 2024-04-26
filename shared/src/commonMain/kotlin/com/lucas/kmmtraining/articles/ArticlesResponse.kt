@@ -9,5 +9,6 @@ data class ArticlesResponse(
     val status: String,
     @SerialName("totalResults")
     val results: Int,
+    @SerialName("articles")
     val articles: List<ArticleRaw>
 )
