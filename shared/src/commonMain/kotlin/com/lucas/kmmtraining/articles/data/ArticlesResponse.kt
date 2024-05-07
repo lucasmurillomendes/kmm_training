@@ -1,5 +1,6 @@
-package com.lucas.kmmtraining.articles
+package com.lucas.kmmtraining.articles.data
 
+import com.lucas.kmmtraining.articles.data.ArticleRaw
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 

@@ -1,4 +1,4 @@
-package com.lucas.kmmtraining.articles
+package com.lucas.kmmtraining.articles.data
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

@@ -1,6 +1,7 @@
 package com.lucas.kmmtraining.android
 
 import android.app.Application
+import com.lucas.kmmtraining.android.di.databaseModule
 import com.lucas.kmmtraining.android.di.viewModelsModule
 import com.lucas.kmmtraining.di.sharedKoinModules
 import org.koin.android.ext.koin.androidContext
@@ -13,7 +14,7 @@ class KmmTrainingApplication : Application() {
     }
 
     private fun initKoin()  {
-        val modules = sharedKoinModules + viewModelsModule
+        val modules = sharedKoinModules + viewModelsModule + databaseModule
 
         startKoin {
             androidContext(this@KmmTrainingApplication)

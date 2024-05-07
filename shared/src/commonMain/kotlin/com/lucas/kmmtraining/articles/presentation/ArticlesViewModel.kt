@@ -1,9 +1,7 @@
-package com.lucas.kmmtraining.articles
+package com.lucas.kmmtraining.articles.presentation
 
 import com.lucas.kmmtraining.BaseViewModel
-import io.ktor.client.HttpClient
-import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
-import io.ktor.serialization.kotlinx.json.json
+import com.lucas.kmmtraining.articles.domain.ArticlesUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -21,9 +19,14 @@ class ArticlesViewModel(
         getArticles()
     }
 
-    private fun getArticles() {
+    fun getArticles(forceRefresh: Boolean = false) {
         scope.launch {
-            val fetchedArticles = useCase.getArticles()
+            _articlesState.emit(ArticlesState(loading = true, articles = _articlesState.value.articles))
+
+            //to force load
+            //delay(1000)
+
+            val fetchedArticles = useCase.getArticles(forceRefresh)
 
             _articlesState.emit(ArticlesState(articles = fetchedArticles))
         }

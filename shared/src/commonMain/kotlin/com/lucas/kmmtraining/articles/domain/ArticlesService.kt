@@ -1,5 +1,7 @@
-package com.lucas.kmmtraining.articles
+package com.lucas.kmmtraining.articles.domain
 
+import com.lucas.kmmtraining.articles.data.ArticleRaw
+import com.lucas.kmmtraining.articles.data.ArticlesResponse
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.request.get

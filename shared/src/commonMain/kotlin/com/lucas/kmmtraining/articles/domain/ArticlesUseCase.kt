@@ -1,5 +1,6 @@
-package com.lucas.kmmtraining.articles
+package com.lucas.kmmtraining.articles.domain
 
+import com.lucas.kmmtraining.articles.data.ArticleRaw
 import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant
 import kotlinx.datetime.TimeZone
@@ -8,9 +9,9 @@ import kotlinx.datetime.toLocalDateTime
 import kotlinx.datetime.todayIn
 import kotlin.math.abs
 
-class ArticlesUseCase(private val service: ArticlesService) {
-    suspend fun getArticles(): List<Article> {
-        val articlesRaw = service.fecthArticles()
+class ArticlesUseCase(private val repository: ArticlesRepository) {
+    suspend fun getArticles(forceRefresh: Boolean): List<Article> {
+        val articlesRaw = repository.getArticles(forceRefresh)
         return mapArticles(articlesRaw)
     }
 

@@ -1,12 +1,12 @@
 package com.lucas.kmmtraining.di
 
-import com.lucas.kmmtraining.articles.ArticlesViewModel
+import com.lucas.kmmtraining.articles.presentation.ArticlesViewModel
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 import org.koin.core.context.startKoin
 
 fun initKoin() {
-    val modules = sharedKoinModules
+    val modules = sharedKoinModules + databaseModule
 
     startKoin {
         modules(modules)

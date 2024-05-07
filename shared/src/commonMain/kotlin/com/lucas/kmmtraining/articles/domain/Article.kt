@@ -1,4 +1,4 @@
-package com.lucas.kmmtraining.articles
+package com.lucas.kmmtraining.articles.domain
 
 data class Article(
     val title: String,
